@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <script src="./src/scripts/script.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <title>DrivenBooks</title>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <h1>DrivenBooks</h1>
+      <h2>Encontre o livro perfeito para você</h2>
+    </div>
+
+    <div class="content">
+      <div class="books-with-selection">
+        <div class="book">
+          <img src="./assets/img/a-garota-que-nao-se-calou.jpg" />
+        </div>
+
+        <div class="book">
+          <img src="./assets/img/casamento-americano.jpg" />
+        </div>
+
+        <div class="book">
+          <img src="./assets/img/fique-comigo.jpg" />
+        </div>
+
+        <div class="book">
+          <img src="./assets/img/minha-pele.jpg" />
+        </div>
+
+        <div class="book">
+          <img src="./assets/img/nascido-crime.jpg" />
+        </div>
+
+        <div class="book">
+          <img src="./assets/img/vermelho-branco-sangue-azul.jpg" />
+        </div>
+      </div>
+
+      <div class="book-box">
+        <div class="line-action">
+          <ion-icon class="icon" name="close-circle"></ion-icon>
+        </div>
+
+        <div class="book-information">
+          <h4 class="book-title">A garota que não se calou</h4>
+          <h5 class="book-author">Abi Daré</h5>
+          <p class="book-details">
+            Esta é a história inesquecível de uma menina que deseja estudar para
+            poder encontrar sua voz e falar por si mesma. A garota que não se
+            calou é uma narrativa comovente e triunfante sobre o poder de lutar
+            pelos seus sonhos.
+          </p>
+        </div>
+
+        <div class="line-action">
+          <button class="add-button">
+            <ion-icon class="add-icon" name="add"></ion-icon> Adicionar a lista
+          </button>
+        </div>
+      </div>
+
+      <div class="books-list show">
+        <h3>Lista de Leitura</h3>
+        <div class="listed-books">
+          <p>A garota que não se calou</p>
+          <p>A garota que não se calou</p>
+          <p>A garota que não se calou</p>
+          <p>A garota que não se calou</p>
+          <p>A garota que não se calou</p>
+          <p>A garota que não se calou</p>
+          <p>A garota que não se calou</p>
+          <p>A garota que não se calou</p>
+        </div>
+        <div class="modal-actions">
+          <div class="close-button" onclick="closeOrder();">Fechar</div>
+          <div onclick="closeOrder();">Limpar</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="list-button disabled" disabled onclick="confirmOrder()">
+        Ver a lista
+      </button>
+    </div>
+  </body>
+</html>
