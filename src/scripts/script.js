@@ -33,6 +33,7 @@ function clearList() {
 
 function makeList() {
   const showinBooks = document.querySelector(".listed-books");
+  showinBooks.innerHTML = ""
   for (let book in listOfBooks) {
     showinBooks.innerHTML += "<p>" + listOfBooks[book] + "<p>";
   }
@@ -43,7 +44,6 @@ function addToList() {
   if (!checkIfBookAlreadyListed(bookString)) {
     listOfBooks.push(bookString);
   }
-
   const listButton = document.querySelector(".list-button");
   listButton.disabled = false;
   listButton.classList.remove("disabled");
