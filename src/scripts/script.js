@@ -78,6 +78,8 @@ function selectBook(book) {
 }
 
 function closeBookInformation() {
+    document.querySelector(".selected").classList.remove("selected")
+    
     const booksExhibition = document.querySelector(".books")
     booksExhibition.classList.remove("books-with-selection")
     booksExhibition.classList.add("books-without-selection")
