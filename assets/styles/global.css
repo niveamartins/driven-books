@@ -230,3 +230,7 @@ h3 {
   border: none;
   font-size: 1.25em;
 }
+
+.disabled {
+    background-color: lightgray;
+}
