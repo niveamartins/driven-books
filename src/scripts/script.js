@@ -1,45 +1,16 @@
 let listOfBooks = [];
 
-function closeButtons(classToClose) {
-  if (classToClose === "books-list") {
-    const bookList = document.querySelector(".books-list");
-    bookList.classList.remove("show");
-    bookList.classList.add("hidden");
-  } else {
-    closeBookInformation();
-  }
-}
+function showBookInformation(bookImg) {
+  const book = findBookInformation(bookImg);
 
-function openList() {
-  const bookList = document.querySelector(".books-list");
-  makeList();
-  bookList.classList.remove("hidden");
-  bookList.classList.add("show");
-}
-
-function clearList() {
-  listOfBooks = [];
-  const showinBooks = document.querySelector(".listed-books");
-  showinBooks.innerHTML = "";
-
-  const listButton = document.querySelector(".list-button");
-  listButton.disabled = true;
-  listButton.classList.add("disabled");
-
-  const bookList = document.querySelector(".books-list");
-  bookList.classList.remove("show");
-  bookList.classList.add("hidden");
-}
-
-function makeList() {
-  const showinBooks = document.querySelector(".listed-books");
-  for (let book in listOfBooks) {
-    showinBooks.innerHTML += "<p>" + listOfBooks[book] + "<p>";
-  }
+  document.querySelector(".book-title").innerHTML = book.title;
+  document.querySelector(".book-author").innerHTML = book.author;
+  document.querySelector(".book-details").innerHTML = book.description;
 }
 
 function addToList() {
   const bookString = getBookToList();
+
   if (!checkIfBookAlreadyListed(bookString)) {
     listOfBooks.push(bookString);
   }
@@ -49,13 +20,22 @@ function addToList() {
   listButton.classList.remove("disabled");
 }
 
-function getBookToList() {
-  const bookName = document.querySelector(".book-title");
-  const bookAuthor = document.querySelector(".book-author");
-  return bookName.innerText + ", " + bookAuthor.innerText + ";";
+function openList() {
+  const bookList = document.querySelector(".books-list");
+  makeList()  
+  bookList.classList.remove("hidden");
+  bookList.classList.add("show");
+}
+
+function makeList() {
+    const showinBooks = document.querySelector(".listed-books")
+    for (let bookIndex = 0; bookIndex <= listOfBooks.length-1; bookIndex++) {
+        showinBooks.innerHTML += "<p>" + listOfBooks[bookIndex] + "</p>"
+    }
 }
 
 function checkIfBookAlreadyListed(book) {
+  // for (let bookIndex = 0; bookIndex <= listOfBook.length-1; bookIndex++)
   for (let bookIndex in listOfBooks) {
     if (listOfBooks[bookIndex] === book) {
       return true;
@@ -64,18 +44,19 @@ function checkIfBookAlreadyListed(book) {
   return false;
 }
 
-function showBookInformation(bookImg) {
-  const book = findBookInformation(bookImg);
+function getBookToList() {
+  const bookName = document.querySelector(".book-title");
+  const bookAuthor = document.querySelector(".book-author");
 
-  document.querySelector(".book-title").innerText = book.title;
-  document.querySelector(".book-author").innerText = book.author;
-  document.querySelector(".book-details").innerText = book.description;
+  return bookName.innerHTML + ", " + bookAuthor.innerHTML + ";";
 }
 
 function selectBook(book) {
-  if (document.querySelector(".selected") !== null) {
-    document.querySelector(".selected").classList.remove("selected");
+  const previouslySelected = document.querySelector(".selected");
+  if (previouslySelected !== null) {
+    previouslySelected.classList.remove("selected");
   }
+
   book.classList.add("selected");
   const bookImg = book.querySelector(".book-img");
   showBookInformation(bookImg.src);
@@ -86,17 +67,6 @@ function selectBook(book) {
 
   const bookBox = document.querySelector(".book-box");
   bookBox.classList.remove("hidden");
-}
-
-function closeBookInformation() {
-  document.querySelector(".selected").classList.remove("selected");
-
-  const booksExhibition = document.querySelector(".books");
-  booksExhibition.classList.remove("books-with-selection");
-  booksExhibition.classList.add("books-without-selection");
-
-  const bookBox = document.querySelector(".book-box");
-  bookBox.classList.add("hidden");
 }
 
 function findBookInformation(bookImg) {
