@@ -24,75 +24,65 @@
     </div>
 
     <div class="content">
-      <div class="books-with-selection">
-        <div class="book">
-          <img src="./assets/img/a-garota-que-nao-se-calou.jpg" />
+      <div class="books books-without-selection">
+        <div class="book" onclick="selectBook(this)">
+          <img class="book-img" src="./assets/img/a-garota-que-nao-se-calou.jpg" />
         </div>
 
-        <div class="book">
-          <img src="./assets/img/casamento-americano.jpg" />
+        <div class="book" onclick="selectBook(this)">
+          <img class="book-img" src="./assets/img/casamento-americano.jpg" />
         </div>
 
-        <div class="book">
-          <img src="./assets/img/fique-comigo.jpg" />
+        <div class="book" onclick="selectBook(this)">
+          <img class="book-img" src="./assets/img/fique-comigo.jpg" />
         </div>
 
-        <div class="book">
-          <img src="./assets/img/minha-pele.jpg" />
+        <div class="book" onclick="selectBook(this)">
+          <img class="book-img" src="./assets/img/minha-pele.jpg" />
         </div>
 
-        <div class="book">
-          <img src="./assets/img/nascido-crime.jpg" />
+        <div class="book" onclick="selectBook(this)">
+          <img class="book-img" src="./assets/img/nascido-crime.jpg" />
         </div>
 
-        <div class="book">
-          <img src="./assets/img/vermelho-branco-sangue-azul.jpg" />
+        <div class="book" onclick="selectBook(this)">
+          <img class="book-img" src="./assets/img/vermelho-branco-sangue-azul.jpg" />
         </div>
       </div>
 
-      <div class="book-box">
+      <div class="book-box hidden">
         <div class="line-action">
-          <ion-icon class="icon" name="close-circle"></ion-icon>
+          <ion-icon onclick="closeButtons('book-box')" class="icon" name="close-circle"></ion-icon>
         </div>
 
         <div class="book-information">
-          <h4 class="book-title">A garota que não se calou</h4>
-          <h5 class="book-author">Abi Daré</h5>
+          <h4 class="book-title"></h4>
+          <h5 class="book-author"></h5>
           <p class="book-details">
-            Esta é a história inesquecível de uma menina que deseja estudar para
-            poder encontrar sua voz e falar por si mesma. A garota que não se
-            calou é uma narrativa comovente e triunfante sobre o poder de lutar
-            pelos seus sonhos.
+           
           </p>
         </div>
 
         <div class="line-action">
-          <button class="add-button">
+          <button class="add-button" onclick="addToList()">
             <ion-icon class="add-icon" name="add"></ion-icon> Adicionar a lista
           </button>
         </div>
       </div>
 
-      <div class="books-list show">
+      <div class="books-list hidden">
         <h3>Lista de Leitura</h3>
         <div class="listed-books">
-          <p>A garota que não se calou</p>
-          <p>A garota que não se calou</p>
-          <p>A garota que não se calou</p>
-          <p>A garota que não se calou</p>
-          <p>A garota que não se calou</p>
-          <p>A garota que não se calou</p>
-          <p>A garota que não se calou</p>
-          <p>A garota que não se calou</p>
+          
         </div>
         <div class="modal-actions">
-          <div class="close-button" onclick="closeOrder();">Fechar</div>
-          <div onclick="closeOrder();">Limpar</div>
+          <div class="close-button" onclick="closeButtons('books-list');">Fechar</div>
+          <div onclick="clearList();">Limpar</div>
         </div>
       </div>
     </div>
     <div class="footer">
-      <button class="list-button disabled" disabled onclick="confirmOrder()">
+      <button class="list-button" onclick="openList()">
         Ver a lista
       </button>
     </div>
